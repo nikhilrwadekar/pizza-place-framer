@@ -24,6 +24,7 @@ const Base = ({ addBase, pizza }) => {
           className="next"
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }} // 0 Pixels on from its original position
+          transition={{ type: "spring" }}
         >
           <Link to="/toppings">
             <button>Next</button>
