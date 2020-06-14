@@ -18,6 +18,7 @@ const containerVariants = {
       staggerChildren: 0.5,
     },
   },
+  exit: { x: "-100vw", transition: { ease: "easeInOut" } }, // Call it whatever but refer it
 };
 
 const nextVariants = {
@@ -40,24 +41,15 @@ const childVariants = {
 };
 
 const Order = ({ pizza }) => {
-  const [showTitle, setShowTitle] = useState(true);
-  setTimeout(() => {
-    setShowTitle(false);
-  }, 4000);
-
   return (
     <motion.div
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
       className="container order"
     >
-      {/* Surround with AnimatePresence to animate out stuff. Add exit prop as well*/}
-      <AnimatePresence>
-        {showTitle && (
-          <motion.h2 exit={{ y: -1000 }}>Thank you for your order :)</motion.h2>
-        )}
-      </AnimatePresence>
+      <h2>Thank you for your order :)</h2>
 
       {/* Needs Transition Orchestration for the animation to be noticable (otherwise it just animates off the screen) */}
       <motion.p variants={childVariants}>
