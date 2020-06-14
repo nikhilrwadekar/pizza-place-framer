@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Variant
 const containerVariants = {
@@ -40,6 +40,11 @@ const childVariants = {
 };
 
 const Order = ({ pizza }) => {
+  const [showTitle, setShowTitle] = useState(true);
+  setTimeout(() => {
+    setShowTitle(false);
+  }, 4000);
+
   return (
     <motion.div
       variants={containerVariants}
@@ -47,7 +52,13 @@ const Order = ({ pizza }) => {
       animate="visible"
       className="container order"
     >
-      <h2>Thank you for your order :)</h2>
+      {/* Surround with AnimatePresence to animate out stuff. Add exit prop as well*/}
+      <AnimatePresence>
+        {showTitle && (
+          <motion.h2 exit={{ y: -1000 }}>Thank you for your order :)</motion.h2>
+        )}
+      </AnimatePresence>
+
       {/* Needs Transition Orchestration for the animation to be noticable (otherwise it just animates off the screen) */}
       <motion.p variants={childVariants}>
         You ordered a {pizza.base} pizza with:
