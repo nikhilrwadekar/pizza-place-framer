@@ -62,12 +62,10 @@ const Base = ({ addBase, pizza }) => {
       {pizza.base && (
         <motion.div
           className="next"
-          initial={{ x: "-100vw" }}
-          animate={{ x: 0 }} // 0 Pixels on from its original position
+          variants={nextVariants} // If parent has similarly named variants, the corresponding variants are implictly applied to the children!
         >
           <Link to="/toppings">
             <motion.button
-              variants={nextVariants} // If parent has similarly named variants, the corresponding variants are implictly applied to the children!
               whileHover={{
                 scale: 1.1,
                 textShadow: "0px 0px 8px rgb(255,255,255)",
