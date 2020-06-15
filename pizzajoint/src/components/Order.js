@@ -57,7 +57,7 @@ const Order = ({ pizza, setShowModal }) => {
       exit="exit"
       className="container order"
     >
-      <h2>Thank you for your order :)</h2>
+      <h2>Thank you for your order 😀</h2>
 
       {/* Needs Transition Orchestration for the animation to be noticable (otherwise it just animates off the screen) */}
       <motion.p variants={childVariants}>

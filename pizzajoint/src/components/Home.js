@@ -29,13 +29,15 @@ const Home = () => {
       animate="visible"
       exit="exit"
     >
-      <motion.h2 animate={{ fontSize: 50 }}>Welcome to Pizza Joint</motion.h2>
+      <motion.h2 animate={{ fontSize: 50 }}>
+        Welcome to Nikhil's Pizza Joint
+      </motion.h2>
       <Link to="/base">
         <motion.button
           variants={buttonVariants}
           whileHover="hover" // On Hover animation
         >
-          Create Your Pizza
+          Create Your Pizza 🍕
         </motion.button>
       </Link>
 

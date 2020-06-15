@@ -48,7 +48,7 @@ const Loader = () => {
           cycleAnimation();
         }}
       >
-        Change Bounce Style
+        Here's a bouncing ball for your troubles. Stay Safe!
       </div>
     </>
   );

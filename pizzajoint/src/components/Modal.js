@@ -38,7 +38,9 @@ const Modal = ({ showModal, setShowModal }) => {
           <motion.div className="modal" variants={modal}>
             <p>Want to make another pizza?</p>
             <Link to="/">
-              <button onClick={() => setShowModal(false)}>Start Again</button>
+              <button onClick={() => setShowModal(false)}>
+                Start Again 🍕🍕
+              </button>
             </Link>
           </motion.div>
         </motion.div>

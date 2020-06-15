@@ -54,7 +54,7 @@ const Header = () => {
         animate={{ y: -10 }}
         transition={{ delay: 0.2, type: "spring", stiffness: 120 }} // A bit of delay. Default transition type is Spring. Stiffness sets the strength of the spring
       >
-        <h1>Pizza Joint</h1>
+        <h1>Nikhil's Pizza Joint 🍕</h1>
       </motion.div>
     </header>
   );
