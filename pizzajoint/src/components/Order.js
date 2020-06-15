@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Variant
@@ -40,7 +40,15 @@ const childVariants = {
   },
 };
 
-const Order = ({ pizza }) => {
+const Order = ({ pizza, setShowModal }) => {
+  // Run once
+  useEffect(() => {
+    setTimeout(() => {
+      // Starts the timer even if the tab isn't active.
+      setShowModal(true);
+    }, 5000);
+  }, [setShowModal]);
+
   return (
     <motion.div
       variants={containerVariants}

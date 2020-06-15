@@ -6,10 +6,12 @@ import Base from "./components/Base";
 import Toppings from "./components/Toppings";
 import Order from "./components/Order";
 import { AnimatePresence } from "framer-motion";
+import Modal from "./components/Modal";
 
 function App() {
   const location = useLocation(); // Get Route Location
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
+  const [showModal, setShowModal] = useState(false);
 
   const addBase = (base) => {
     setPizza({ ...pizza, base });
@@ -28,6 +30,7 @@ function App() {
   return (
     <>
       <Header />
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <AnimatePresence exitBeforeEnter>
         {" "}
         {/* exitBeforeEnter ensures a component exits before letting the next component Enter */}
@@ -39,7 +42,7 @@ function App() {
             <Toppings addTopping={addTopping} pizza={pizza} />
           </Route>
           <Route path="/order">
-            <Order pizza={pizza} />
+            <Order pizza={pizza} setShowModal={setShowModal} />
           </Route>
           <Route path="/">
             <Home />
