@@ -36,6 +36,8 @@ const Loader = () => {
   return (
     <>
       <motion.div
+        drag
+        dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
         variants={loaderVariants}
         animate={animation}
         className="loader"
@@ -46,7 +48,7 @@ const Loader = () => {
           cycleAnimation();
         }}
       >
-        Cycle Loader
+        Change Bounce Style
       </div>
     </>
   );
