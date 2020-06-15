@@ -31,7 +31,10 @@ function App() {
     <>
       <Header />
       <Modal showModal={showModal} setShowModal={setShowModal} />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence
+        exitBeforeEnter
+        onExitComplete={() => setShowModal(false)}
+      >
         {" "}
         {/* exitBeforeEnter ensures a component exits before letting the next component Enter */}
         <Switch location={location} key={location.key}>
